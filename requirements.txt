@@ -1,0 +1,13 @@
+# MCP SDK (includes FastMCP, SSE server, stdio, uvicorn, starlette)
+mcp>=1.27.0
+
+# Google API dependencies
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+
+# Pydantic (used by MCP and our schemas)
+pydantic>=2.11.0
+
+# Environment variable support
+python-dotenv>=1.0.0

@@ -1,0 +1,53 @@
+review_id,rating,title,text,date
+R001,1,KYC verification stuck,"I have been waiting for 3 weeks for my KYC to be verified. Uploaded Aadhaar and PAN but still showing pending. Very frustrating experience with Groww.",2026-04-15
+R002,2,UPI payment failed,"Tried to add money via UPI but payment failed 3 times. My bank debited Rs 5000 but Groww wallet shows zero. Contact support at helpdesk@groww.in please help.",2026-04-18
+R003,1,App crashes during market hours,"Every morning between 9:15 and 9:30 the app just crashes. Cannot place any orders. Lost money because of this. My account number is 98765432100.",2026-04-20
+R004,5,Good app,Good app,2026-04-22
+R005,1,Cannot withdraw funds,"Withdrawal has been pending for 5 days now. Amount Rs 25000 stuck. Called 9876543210 support but no response. This is unacceptable for a financial app.",2026-04-25
+R006,2,Mutual fund NAV not updating,"The NAV for HDFC Mid Cap fund has not updated since 2 days. Shows old values. Portfolio value is completely wrong. Email me at rahul.sharma@gmail.com with fix.",2026-04-28
+R007,1,KYC rejected without reason,"Submitted all documents for KYC. Got rejected with no explanation. PAN number ABCDE1234F was entered correctly. Waste of time.",2026-05-01
+R008,3,Decent but slow,"App is decent for beginners but the loading times are horrible. Takes 10 seconds to open portfolio. Phone: +91-9123456789",2026-05-03
+R009,1,Money deducted but order not placed,"Placed a buy order for Reliance shares. Money got deducted from my account 1234567890 but order shows failed. No refund yet.",2026-05-05
+R010,2,SIP not executing,"My SIP for Axis Bluechip fund did not execute this month. Had sufficient balance. Very unreliable. ID: GRW-USR-44821",2026-05-07
+R011,1,Login issues every day,"Cannot login to the app. OTP never arrives. Tried with my number 8899776655 multiple times. Switched to Zerodha.",2026-05-08
+R012,4,Nice,"Nice",2026-05-09
+R013,1,IPO application stuck,"Applied for Swiggy IPO 3 days ago. Status still shows processing. Amount blocked in my bank account ACC-99887766. Need resolution ASAP.",2026-05-10
+R014,2,Charts are broken,"The candlestick charts for intraday trading are completely broken. Shows wrong data. How can I trade with wrong charts? dev@groww.in fix this.",2026-05-11
+R015,1,Onboarding nightmare,"Tried to create account. Aadhaar upload failed 5 times. PAN verification takes forever. My PAN is FGHIJ5678K. Worst onboarding experience.",2026-05-12
+R016,3,Average experience,"The app works okay most of the time but customer support is nonexistent. Takes 4-5 days to get a response on tickets.",2026-05-13
+R017,1,Statement download not working,"Cannot download my account statement for tax filing. Button does nothing. Need this urgently for ITR. Contact: mytaxmail@yahoo.com",2026-05-14
+R018,2,UPI autopay failing,"Set up UPI autopay for my SIP but it keeps failing every month. Have to manually invest each time. Defeats the purpose. Amount 2000 from a]c 4455667788.",2026-05-15
+R019,1,Wrong portfolio valuation,"My portfolio shows ₹2.5 lakhs but actual value should be around ₹3 lakhs. NAV sync issue with AMC. Very concerning for a financial platform.",2026-05-16
+R020,5,Best app ever,Best,2026-05-17
+R021,1,KYC taking forever,"Applied for KYC 2 weeks ago. Still under review. How long does it take? Support number 7788990011 not reachable. Very poor service.",2026-03-15
+R022,2,Funds stuck in withdrawal,"Initiated withdrawal of Rs 15000 on Monday. Still not received. Bank account HDFC 50100012345678. Need immediate help.",2026-03-20
+R023,1,App freezes on stock page,"Whenever I open any stock detail page the app freezes for 30 seconds. Using Samsung Galaxy S22. ram.krishna@outlook.com for updates.",2026-03-25
+R024,1,OTP issues continue,"OTP for login takes 10 minutes to arrive. Sometimes never arrives. Phone 9090808070. How is this acceptable for a trading app?",2026-03-28
+R025,2,SIP date cannot be changed,"Want to change my SIP date from 5th to 15th but the option is greyed out. Called +91 8080707060 but got disconnected twice.",2026-04-01
+R026,1,Payment gateway down,"Payment gateway has been down since morning. Cannot add money to invest. Sensex is rallying and I'm stuck. user_id: USR-78654",2026-04-03
+R027,3,Okay for mutual funds,"The mutual fund section is good but stock trading experience is subpar compared to competitors. Search is slow and filters don't work.",2026-04-05
+R028,1,Tax P&L statement wrong,"The profit and loss statement for FY 2025-26 shows incorrect values. Capital gains calculation is wrong. My CA says numbers don't match. Email: caoffice@firm.com",2026-04-08
+R029,2,Notifications not working,"I don't get any price alerts or order execution notifications. Missed selling at target price. Push notifications completely broken.",2026-04-10
+R030,1,Account locked randomly,"My account got locked for no reason. No email no SMS. Had to contact support with Aadhaar 1234-5678-9012 to unlock. Took 3 days.",2026-04-12
+R031,2,Groww Gold issues,"Bought digital gold worth Rs 5000 but the grams shown are less than market rate. Feels like hidden charges. No transparency.",2026-04-14
+R032,1,Bank account linking failed,"Tried linking my SBI account 30012345678 but keeps failing. Error message is generic. No idea what went wrong.",2026-04-16
+R033,1,Market orders executing at wrong price,"Placed market order for TCS at 3800 but it executed at 3825. Slippage is too high. Lost ₹500 on a single trade.",2026-04-19
+R034,2,Customer support is terrible,"Raised a ticket 10 days ago about wrong mutual fund units. No response yet. Ticket ID: TKT-90876. Thinking of moving to another platform.",2026-04-21
+R035,4,Improving gradually,"App has improved a lot in the last 6 months. UI is cleaner. Still needs work on speed during market hours though.",2026-04-23
+R036,1,ETF tracking error is high,"The Nifty 50 ETF shows 0.5% tracking error which is way too high. NAV deviation from index is concerning.",2026-04-26
+R037,1,Cannot cancel pending order,"Placed a limit order and now cannot cancel it. Cancel button not responding. Order ID ORD-445566. Money stuck.",2026-04-29
+R038,2,Two-factor authentication broken,"Enabled 2FA but now it asks for authentication even when I'm already logged in. Very annoying. App PIN also not working.",2026-05-02
+R039,1,Nominee update not saving,"Tried to update nominee details. Form submits but changes don't save. Nominee Aadhaar 9876-5432-1098 not being accepted.",2026-05-04
+R040,3,Good for beginners only,"Good app if you're just starting. But for serious traders the charting tools and order types are very limited compared to Zerodha.",2026-05-06
+R041,1,KYC reverification nightmare,"Got an email saying re-verify KYC. Uploaded documents again but rejected twice. PAN LMNOP9012Q matches my records. System is broken.",2026-05-08
+R042,2,Dividend tracking missing,"There is no proper dividend tracking. I received dividends from 3 stocks but the app doesn't show them anywhere in the portfolio.",2026-05-10
+R043,1,App not opening after update,"Updated the app to latest version and now it won't open at all. Stuck on splash screen. Phone: OnePlus 12. Contact me at 7766554433.",2026-05-12
+R044,1,Intraday margin call issues,"Got a margin call notification but my positions were well within limits. System calculated margins incorrectly. Account 789012345.",2026-05-14
+R045,2,Watchlist keeps resetting,"My watchlist resets every time I close the app. Have to re-add 20+ stocks daily. This has been happening for weeks.",2026-05-15
+R046,1,Withdrawal to wrong bank,"Withdrew Rs 30000 but it went to an old bank account that I had removed from the app. Bank: ICICI acc ending 4321. Need reversal.",2026-05-16
+R047,5,Love it,"Love it works great",2026-05-17
+R048,1,SIP payment bouncing,"My SIP payment keeps bouncing even though I have sufficient funds. Bank says no debit request received. UPI ID: myupi@oksbi",2026-05-17
+R049,2,Statement shows wrong holdings,"Downloaded portfolio statement but it shows stocks I sold 2 months ago. Incorrect report for tax purposes.",2026-05-18
+R050,1,Referral bonus not credited,"Referred 3 friends who completed KYC but referral bonus of Rs 750 not credited. It has been over 30 days. Support email: complaints@groww.in",2026-05-18
+R051,1,Old review to be filtered,"This is a very old review from last year. App was terrible back then.",2024-01-15
+R052,2,Ancient complaint,"Complained about this issue ages ago. Nothing has changed.",2024-06-20

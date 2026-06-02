@@ -1,0 +1,42 @@
+# ---- Secrets & Credentials (NEVER commit these) ----
+.env
+*.env
+phase3_mcp/token.json
+phase3_mcp/credentials.json
+credentials.json
+token.json
+client_secret_*.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ---- Virtual Environment ----
+venv/
+.venv/
+env/
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Gemini Agent Data ----
+.gemini/
+
+# ---- Misc ----
+*.log
+MCP SERVER
