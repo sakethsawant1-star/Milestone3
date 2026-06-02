@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from datetime import datetime
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from auth import get_creds
+from phase3_mcp.auth import get_creds
 
 # ---------------- LOGGING SETUP ---------------- #
 logging.basicConfig(
