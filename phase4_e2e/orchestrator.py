@@ -156,11 +156,18 @@ class PipelineOrchestrator:
                     "doc_id": self.doc_id,
                     "content": doc_content,
                 })
-                self.doc_result = str(result)
-                print(f"   [OK] Document updated successfully")
+                
+                if getattr(result, "isError", False):
+                    error_msg = result.content[0].text if result.content else "Unknown error"
+                    logger.error(f"MCP Server returned an error: {error_msg}")
+                    print(f"   [FAIL] Document update failed: {error_msg}")
+                    self.doc_result = None
+                else:
+                    self.doc_result = str(result)
+                    print(f"   [OK] Document updated successfully")
             except Exception as e:
-                logger.error(f"Failed to append to Google Doc: {e}")
-                print(f"   [FAIL] Document update failed: {e}")
+                logger.error(f"Failed to connect or append to Google Doc: {e}")
+                print(f"   [FAIL] Document update network failure: {e}")
                 self.doc_result = None
 
             # ── 3b: Create Gmail draft ──
@@ -171,11 +178,18 @@ class PipelineOrchestrator:
                     "subject": email_data["subject"],
                     "body": email_data["body"],
                 })
-                self.email_result = str(result)
-                print(f"   [OK] Email draft created successfully")
+                
+                if getattr(result, "isError", False):
+                    error_msg = result.content[0].text if result.content else "Unknown error"
+                    logger.error(f"MCP Server returned an error: {error_msg}")
+                    print(f"   [FAIL] Email draft failed: {error_msg}")
+                    self.email_result = None
+                else:
+                    self.email_result = str(result)
+                    print(f"   [OK] Email draft created successfully")
             except Exception as e:
-                logger.error(f"Failed to create Gmail draft: {e}")
-                print(f"   [FAIL] Email draft failed: {e}")
+                logger.error(f"Failed to connect or create Gmail draft: {e}")
+                print(f"   [FAIL] Email draft network failure: {e}")
                 self.email_result = None
 
 
