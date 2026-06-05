@@ -122,3 +122,55 @@ This document outlines the step-by-step plan to implement the Groww App Review A
         *   The system fails gracefully with readable error logs rather than unhandled tracebacks.
         *   If the MCP server is unreachable, the system reports "Docs MCP Server offline" instead of generic tool failures.
         *   If Groq daily token limit is approached, the system aborts with "Daily Groq token budget exhausted" instead of hitting a 429.
+
+## Phase 6: Automated Weekly Scheduler (GitHub Actions)
+**Objective:** Automate the entire pipeline to run weekly with zero manual intervention, scraping fresh reviews from the Google Play Store.
+*   **Detailed Tasks:**
+    *   **Review Scraper (`phase1_ingestion/scraper.py`):**
+        *   Use `google-play-scraper` Python library to fetch the latest Groww app reviews from the Play Store.
+        *   Normalize scraped data to the Phase 1 schema: `{review_id, rating, title, text, date}`.
+        *   Save output as timestamped JSON (e.g., `groww_reviews_20260605.json`).
+        *   Default fetch: 500 reviews per run (configurable).
+    *   **Non-Interactive Runner (`scheduled_run.py`):**
+        *   Reads all configuration from environment variables (no `input()` prompts).
+        *   Required env vars: `GROQ_API_KEY`, `MCP_SERVER_URL`, `TARGET_DOC_ID`, `TARGET_EMAIL`.
+        *   Pipeline: Scrape -> Ingest/Sanitize -> Analyze (Groq) -> Publish (MCP/Railway).
+        *   Graceful fallback: if scraping fails, uses existing cleaned data.
+    *   **GitHub Actions Workflow (`.github/workflows/weekly_review.yml`):**
+        *   **Cron Schedule:** Every Monday at 9:00 AM IST (`30 3 * * 1` UTC).
+        *   **Manual Trigger:** `workflow_dispatch` with configurable `review_count` and `skip_scrape` inputs.
+        *   **Secrets Required:** `GROQ_API_KEY`, `MCP_SERVER_URL`, `TARGET_DOC_ID`, `TARGET_EMAIL`, `GOOGLE_TOKEN_JSON`, `GOOGLE_CREDENTIALS_JSON`.
+        *   **Artifact Upload:** Saves scraped review data as a GitHub Actions artifact (30-day retention).
+*   **Evaluation:**
+    *   Manual trigger of the GitHub Actions workflow from the Actions tab.
+    *   *Assertions/Exit Criteria:*
+        *   Workflow completes without errors.
+        *   Google Doc is updated with a new timestamped report.
+        *   Gmail draft is created with the summary email.
+        *   Review data artifact is uploaded successfully.
+
+## Phase 7: Web Front-End (Next.js + Vercel)
+**Objective:** Build a beautiful, interactive web dashboard for the Groww Review Analyst, deployed on Vercel.
+*   **Design Inspiration:** Google Stitch design language.
+*   **Detailed Tasks:**
+    *   **Dashboard Page:**
+        *   Display the latest analysis report (themes, quotes, action ideas).
+        *   Visual charts for theme distribution and sentiment breakdown.
+        *   Timeline view of past weekly reports.
+    *   **Manual Trigger Page:**
+        *   Upload a custom CSV of reviews.
+        *   Configure Google Doc ID and email address.
+        *   "Run Analysis" button to trigger the pipeline.
+        *   Real-time progress indicators.
+    *   **Settings Page:**
+        *   Configure schedule frequency.
+        *   Manage API keys and MCP server URL.
+    *   **API Backend:**
+        *   Next.js API routes that wrap the Python pipeline.
+        *   Or: call the Railway MCP server directly from the front-end.
+*   **Deployment:** Vercel (auto-deploy from GitHub `main` branch).
+*   **Evaluation:**
+    *   *Assertions/Exit Criteria:*
+        *   Dashboard loads and displays the latest report data.
+        *   Manual trigger successfully runs the pipeline and shows results.
+        *   Responsive design works on desktop and mobile.

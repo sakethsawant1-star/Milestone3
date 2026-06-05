@@ -159,7 +159,7 @@ class GrowwReviewAgent:
         # Validate against schema
         try:
             validated = BatchAnalysisResult(**raw_result)
-            print(f"  [Pass 1] Batch {batch_index + 1} ✓ — "
+            print(f"  [Pass 1] Batch {batch_index + 1} [OK] - "
                   f"{len(validated.themes)} themes, "
                   f"{len(validated.quotes)} quotes, "
                   f"{len(validated.action_ideas)} ideas")
@@ -167,7 +167,7 @@ class GrowwReviewAgent:
         except Exception as e:
             logger.warning(f"Batch {batch_index + 1} schema validation warning: {e}")
             # Return raw result if validation fails (synthesis will still work)
-            print(f"  [Pass 1] Batch {batch_index + 1} ⚠ — partial validation: {e}")
+            print(f"  [Pass 1] Batch {batch_index + 1} [WARN] - partial validation: {e}")
             return raw_result
 
     def _synthesize(self, partial_results: list, total_reviews: int) -> FinalReport:
@@ -194,7 +194,7 @@ class GrowwReviewAgent:
         # Validate against final schema
         try:
             report = FinalReport(**raw_result)
-            print(f"  [Pass 2] Synthesis ✓ — "
+            print(f"  [Pass 2] Synthesis [OK] - "
                   f"{len(report.themes)} themes, "
                   f"{len(report.quotes)} quotes, "
                   f"{len(report.action_ideas)} ideas, "
@@ -239,9 +239,9 @@ class GrowwReviewAgent:
         total_reviews = preprocess_stats["output_count"]
 
         # Step 2: Pass 1 — Batch Analysis
-        print(f"\n{'─'*40}")
+        print(f"\n{'-'*40}")
         print(f"  Pass 1: Batch Analysis ({len(batches)} batches)")
-        print(f"{'─'*40}")
+        print(f"{'-'*40}")
 
         partial_results = []
         for i, batch in enumerate(batches):
@@ -249,23 +249,23 @@ class GrowwReviewAgent:
             partial_results.append(result)
 
         # Step 3: Pass 2 — Synthesis
-        print(f"\n{'─'*40}")
+        print(f"\n{'-'*40}")
         print(f"  Pass 2: Synthesis")
-        print(f"{'─'*40}")
+        print(f"{'-'*40}")
 
         report = self._synthesize(partial_results, total_reviews)
 
         # Summary
         print(f"\n{'='*60}")
         print(f"  Phase 2 Complete!")
-        print(f"  • LLM calls: {self._call_count}")
-        print(f"  • Total tokens: {self._total_tokens}")
-        print(f"  • Themes: {len(report.themes)}")
-        print(f"  • Quotes: {len(report.quotes)}")
-        print(f"  • Ideas: {len(report.action_ideas)}")
-        print(f"  • Report length: {len(report.text_body.split())} words")
+        print(f"  * LLM calls: {self._call_count}")
+        print(f"  * Total tokens: {self._total_tokens}")
+        print(f"  * Themes: {len(report.themes)}")
+        print(f"  * Quotes: {len(report.quotes)}")
+        print(f"  * Ideas: {len(report.action_ideas)}")
+        print(f"  * Report length: {len(report.text_body.split())} words")
         usage = self.rate_limiter.daily_usage_summary
-        print(f"  • Daily budget: {usage['tokens_used']}/{usage['tokens_budget']} "
+        print(f"  * Daily budget: {usage['tokens_used']}/{usage['tokens_budget']} "
               f"({usage['utilization_pct']}%)")
         print(f"{'='*60}\n")
 

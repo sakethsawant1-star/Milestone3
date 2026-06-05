@@ -117,6 +117,9 @@ class GrowwMCPClient:
 
 
 if __name__ == "__main__":
+    from dotenv import load_dotenv
+    load_dotenv()
+
     async def main():
         # Auto-detect mode based on environment
         sse_url = os.environ.get("MCP_SERVER_URL")

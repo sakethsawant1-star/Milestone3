@@ -11,3 +11,9 @@ pydantic>=2.11.0
 
 # Environment variable support
 python-dotenv>=1.0.0
+
+# Groq LLM SDK (Phase 2 - Agent)
+groq>=0.4.0
+
+# Google Play Store scraper (Phase 6 - Scheduler)
+google-play-scraper>=1.2.0
